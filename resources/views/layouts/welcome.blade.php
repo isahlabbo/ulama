@@ -3,7 +3,10 @@
     @include('includes.pages.header')
     <body class="fixed-left">
         <div id="wrapper">
-            @include('includes.menus.navbar')            
+            @include('includes.menus.navbar')
+            @auth
+                @include('includes.menus.sidebar')
+            @endauth            
             <div class="content-page">
                 <div class="content">
                     <div class="container">

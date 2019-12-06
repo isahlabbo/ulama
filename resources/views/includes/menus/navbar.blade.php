@@ -4,9 +4,10 @@
                 <!-- LOGO -->
                 <div class="topbar-left">
                     <a href="index.html" class="logo">
-                        <span>
+                    	 <a href="index.html" class="logo"><span>Zir<span>cos</span></span><i class="mdi mdi-layers"></i></a>
+                        <!-- <span>
                             <img src="images/logo.png" alt="" height="30">
-                        </span>
+                        </span> -->
                     </a>
                 </div>
 
@@ -77,7 +78,17 @@
                                     <li><a href="javascript:void(0)"><i class="ti-user m-r-5"></i> Profile</a></li>
                                     <li><a href="javascript:void(0)"><i class="ti-settings m-r-5"></i> Settings</a></li>
                                     <li><a href="javascript:void(0)"><i class="ti-lock m-r-5"></i> Lock screen</a></li>
-                                    <li><a href="javascript:void(0)"><i class="ti-power-off m-r-5"></i> Logout</a></li>
+                                    <li>
+                                    	<i class="ti-power-off m-r-5"></i><a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+	                                    </a>
+
+	                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+	                                        @csrf
+	                                    </form>
+                                    </li>
                                 </ul>
                             </li>
                             @else
