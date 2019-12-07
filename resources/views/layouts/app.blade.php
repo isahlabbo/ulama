@@ -1,20 +1,11 @@
 @extends('layouts.welcome')
 
 @section('side-bar')
-<li>
-    <a href="#"><span><i class="fa fa-video"></i> Profile</span></a>
-</li>
-<li>
-    <a href="#"><span><i class="fa fa-video"></i> Channels</span></a>
-</li>
-<li>
-    <a href="#"><span><i class="fa fa-file-video-o"></i> Videos</span></a>
-</li>
-<li>
-    <a href="#"><span><i class="fa fa-book"></i> Books</span></a>
-</li>
-<li>
-    <a href="#"><span><i class="far fa-file-audio"></i> Audios</span></a>
-</li>
-
+    @if(user()->admin())
+       @include('includes.menus.users.adminMenu')
+    @elseif(user()->preacher())
+        @include('includes.menus.users.preacherMenu')
+    @else
+        @include('includes.menus.users.userMenu')
+    @endif
 @endsection
