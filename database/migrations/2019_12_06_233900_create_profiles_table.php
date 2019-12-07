@@ -15,6 +15,19 @@ class CreateProfilesTable extends Migration
     {
         Schema::create('profiles', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('user_id')
+            ->unsigned()
+            ->nullable()
+            ->foreign()
+            ->references('id')
+            ->on('users')
+            ->delete('restrict')
+            ->update('cascade');
+            $table->text('about_me')->nullable();
+            $table->text('permanant_address')->nullable();
+            $table->text('alternative_address')->nullable();
+            $table->text('image')->nullable();
+            $table->integer('verification_status')->default();
             $table->timestamps();
         });
     }
