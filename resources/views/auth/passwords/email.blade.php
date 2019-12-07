@@ -1,6 +1,8 @@
-@extends('layouts.app')
-
-@section('content')
+@extends('layouts.minimal')
+@section('title')
+    change passowd page
+@endsection
+@section('page-content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
