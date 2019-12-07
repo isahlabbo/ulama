@@ -28,3 +28,4 @@
 <!-- App js -->
 <script src="js/jquery.core.js"></script>
 <script src="js/jquery.app.js"></script>
+    <script src="{{ asset('js/app.js') }}" defer></script>

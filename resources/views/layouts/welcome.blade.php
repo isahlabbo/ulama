@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     @include('includes.pages.header')
-    <body class="fixed-left">
+    <body class="fixed-left" style="background-color: #d8e3ed">
         <div id="wrapper">
             @include('includes.menus.navbar')
             @auth

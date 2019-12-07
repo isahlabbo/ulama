@@ -2,5 +2,4 @@
 
 @section('page-content')
 
-
 @endsection

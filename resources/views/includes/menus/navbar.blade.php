@@ -92,12 +92,12 @@
                     </ul>
                 </li>
                 @else
-                <li class="h4">
-                	<a href="{{ route('login') }}">Login</a>
+                <li>
+                	<a href="{{ route('login') }}"><button class="btn ulama-success-btn">Login</button></a>
                 </li>
-                <li class="h4">
+                <li>
                 	@if (Route::has('register'))
-                        <a href="{{ route('register') }}">Register</a>
+                        <a href="{{ route('register') }}"><button class="btn ulama-success-btn">Register</button></a>
                     @endif
                 </li>    
                 @endauth 
