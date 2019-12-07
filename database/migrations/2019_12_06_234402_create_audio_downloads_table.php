@@ -15,6 +15,22 @@ class CreateAudioDownloadsTable extends Migration
     {
         Schema::create('audio_downloads', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('user_id')
+            ->unsigned()
+            ->nullable()
+            ->foreign()
+            ->references('id')
+            ->on('users')
+            ->delete('restrict')
+            ->update('cascade');
+            $table->integer('audio_id')
+            ->unsigned()
+            ->nullable()
+            ->foreign()
+            ->references('id')
+            ->on('audios')
+            ->delete('restrict')
+            ->update('cascade');
             $table->timestamps();
         });
     }

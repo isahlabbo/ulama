@@ -15,6 +15,16 @@ class CreateAudioTable extends Migration
     {
         Schema::create('audio', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('user_channel_id')
+            ->unsigned()
+            ->nullable()
+            ->foreign()
+            ->references('id')
+            ->on('user_channels')
+            ->delete('restrict')
+            ->update('cascade');
+            $table->string('file');
+            $table->integer('publish')->default(0);
             $table->timestamps();
         });
     }
