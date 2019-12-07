@@ -73,7 +73,7 @@
 
                     <ul class="dropdown-menu dropdown-menu-right arrow-dropdown-menu arrow-menu-right user-list notify-list">
                         <li>
-                            <h5>Hi, John</h5>
+                            <h5>Hi, {{user()->first_name}} {{user()->last_name}}</h5>
                         </li>
                         <li><a href="javascript:void(0)"><i class="ti-user m-r-5"></i> Profile</a></li>
                         <li><a href="javascript:void(0)"><i class="ti-settings m-r-5"></i> Settings</a></li>
