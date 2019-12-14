@@ -2,9 +2,7 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
-
-class DocumentView extends Model
+class DocumentView extends BaseModel
 {
     public function user()
     {

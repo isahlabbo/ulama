@@ -2,9 +2,8 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
 
-class DocumentDownload extends Model
+class DocumentDownload extends BaseModel
 {
     public function users()
     {

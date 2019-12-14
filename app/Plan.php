@@ -2,9 +2,8 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
 
-class Plan extends Model
+class Plan extends BaseModel
 {
     public function channels()
     {

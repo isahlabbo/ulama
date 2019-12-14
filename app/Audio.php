@@ -2,9 +2,8 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
 
-class Audio extends Model
+class Audio extends BaseModel
 {
     public function userChannel()
     {

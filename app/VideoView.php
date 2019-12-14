@@ -2,9 +2,7 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
-
-class VideoView extends Model
+class VideoView extends BaseModel
 {
     public function users()
     {

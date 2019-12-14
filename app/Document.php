@@ -2,9 +2,8 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
 
-class Document extends Model
+class Document extends BaseModel
 {
     public function userChannel()
     {

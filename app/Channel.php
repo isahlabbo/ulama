@@ -2,9 +2,7 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Channel extends Model
+class Channel extends BaseModel
 {
     public function userChannels($value='')
     {

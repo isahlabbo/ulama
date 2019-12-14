@@ -2,9 +2,8 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
 
-class AudioDownload extends Model
+class AudioDownload extends BaseModel
 {
     public function user()
     {
