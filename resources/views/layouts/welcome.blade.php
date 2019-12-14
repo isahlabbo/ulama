@@ -10,6 +10,11 @@
             <div class="content-page">
                 <div class="content">
                     <div class="container">
+
+                        @if(!user()->preacher())
+                            @include('users.account.upgrade.create')
+                        @endif
+
                         @yield('page-content')
                     </div> 
                 </div> 

@@ -76,7 +76,9 @@
                             <h5>Hi, {{user()->first_name}} {{user()->last_name}}</h5>
                         </li>
                         <li><a href="javascript:void(0)"><i class="ti-user m-r-5"></i> Profile</a></li>
-                        <li><a href="javascript:void(0)"><i class="ti-settings m-r-5"></i> Settings</a></li>
+                        @if(!user()->preacher())
+                        <li><a href="#" data-toggle="modal" data-target="#upgrade"><i class="ti-settings m-r-5"></i> Upgrade To Preacher</a></li>
+                        @endif
                         <li><a href="javascript:void(0)"><i class="ti-lock m-r-5"></i> Lock screen</a></li>
                         <li>
                         	<a class="dropdown-item" href="{{ route('logout') }}"
