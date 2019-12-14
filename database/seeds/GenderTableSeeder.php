@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Gender;
 
 class GenderTableSeeder extends Seeder
 {
@@ -11,6 +12,9 @@ class GenderTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $genders = ['Male','Female','Other'];
+        foreach ($genders as $key => $value) {
+        	Gender::firstOrCreate(['name'=>$value]);
+        }
     }
 }
