@@ -11,7 +11,7 @@
                 <div class="content">
                     <div class="container">
 
-                        @if(!user()->preacher())
+                        @if(user() && !user()->preacher())
                             @include('users.account.upgrade.create')
                         @endif
 

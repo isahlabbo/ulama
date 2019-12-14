@@ -23,11 +23,34 @@ class CreateProfilesTable extends Migration
             ->on('users')
             ->delete('restrict')
             ->update('cascade');
-            $table->text('about_me')->nullable();
-            $table->text('permanant_address')->nullable();
+            $table->integer('lga_id')
+            ->unsigned()
+            ->nullable()
+            ->foreign()
+            ->references('id')
+            ->on('lgas')
+            ->delete('restrict')
+            ->update('cascade');
+            $table->integer('gender_id')
+            ->unsigned()
+            ->nullable()
+            ->foreign()
+            ->references('id')
+            ->on('genders')
+            ->delete('restrict')
+            ->update('cascade');
+            $table->integer('state_id')
+            ->unsigned()
+            ->nullable()
+            ->foreign()
+            ->references('id')
+            ->on('states')
+            ->delete('restrict')
+            ->update('cascade');
+            $table->text('about')->nullable();
+            $table->text('home_address')->nullable();
             $table->text('alternative_address')->nullable();
-            $table->text('image')->nullable();
-            $table->integer('verification_status')->default();
+            $table->integer('verification_status')->default(0);
             $table->timestamps();
         });
     }

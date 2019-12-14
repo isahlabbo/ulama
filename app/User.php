@@ -82,4 +82,23 @@ class User extends Authenticatable
     {
         return $this->hasMany(DocumentView::class);
     }
+
+    public function genders()
+    {
+        return Gender::all();
+    }
+
+    public function states()
+    {
+        return State::all();
+    }
+
+    public function lgas()
+    {
+        return Lga::all();
+    }
+    public function name()
+    {
+        return strtolower($this->first_name.'-'.$this->last_name);
+    }
 }

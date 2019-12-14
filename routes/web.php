@@ -18,3 +18,13 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/{user}', 'HomeController@index')->name('home');
+Route::prefix('user')
+   ->namespace('User')
+   ->name('user.')
+   ->group(function() {
+   Route::prefix('account')
+   ->name('account.')
+   ->group(function() {
+	Route::post('upgrade/register', 'AccountController@upgradeRegister')->name('upgrade.register');
+	});
+});
