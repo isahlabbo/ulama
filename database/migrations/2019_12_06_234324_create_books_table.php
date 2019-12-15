@@ -13,7 +13,7 @@ class CreateBooksTable extends Migration
      */
     public function up()
     {
-        Schema::create('documents', function (Blueprint $table) {
+        Schema::create('books', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('user_channel_id')
             ->unsigned()
@@ -23,7 +23,8 @@ class CreateBooksTable extends Migration
             ->on('user_channels')
             ->delete('restrict')
             ->update('cascade');
-            $table->string('file');
+            $table->string('title');
+            $table->text('description')->nullable();
             $table->integer('publish')->default(0);
             $table->timestamps();
         });

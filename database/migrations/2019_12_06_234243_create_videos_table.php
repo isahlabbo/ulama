@@ -23,7 +23,8 @@ class CreateVideosTable extends Migration
             ->on('user_channels')
             ->delete('restrict')
             ->update('cascade');
-            $table->string('file');
+            $table->string('title');
+            $table->text('description')->nullable();
             $table->integer('publish')->default(0);
             $table->timestamps();
         });
