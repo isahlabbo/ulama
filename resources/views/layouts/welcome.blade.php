@@ -10,12 +10,13 @@
             <div class="content-page">
                 <div class="content">
                     <div class="container">
-
-                        @if(user() && !user()->preacher())
-                            @include('users.account.upgrade.create')
-                        @else
-                            @include('users.channels.create')    
-                        @endif
+                        @auth
+                            @if(user() && !user()->preacher())
+                                @include('users.account.upgrade.create')
+                            @else
+                                @include('users.channels.create')    
+                            @endif
+                        @endauth
                         @yield('page-content')
                     </div> 
                 </div> 

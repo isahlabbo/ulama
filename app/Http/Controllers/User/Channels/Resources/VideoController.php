@@ -3,16 +3,16 @@
 namespace App\Http\Controllers\User\Channels\Resources;
 
 use App\UserChannel;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\UserBaseController;
 
-class VideoController extends Controller
+class VideoController extends UserBaseController
 {
     public function register(Request $request)
     {
     	$userChannel = UserChannel::find($request->channel);
     	$video = $userChannel->videos()->firstOrCreate(['title'=>$request->title,'description'=>$request->description]);
-    	$video->addMedia('videos');
+    	$video->addMedia($request->video)->toMediaCollection('videos');
 
     	session()->flash('message','Channel video added successfully');
     	return back();

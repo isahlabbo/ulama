@@ -28,7 +28,7 @@ class Video extends BaseModel implements HasMedia
     public function registerMediaCollections()
     {
         $this
-        ->addMediaCollection('image')
+        ->addMediaCollection('videos')
         ->singleFile(); 
     }
 

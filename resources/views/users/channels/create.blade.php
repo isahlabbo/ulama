@@ -3,9 +3,7 @@
     <div class="modal-dialog">
       <!-- Modal content-->
         <div class="modal-content">
-            <div class="modal-header">	
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
+    
             <div class="modal-body">
             	<form action="{{route('user.channel.register')}}" method="post" enctype="multipart/form-data">
             		@csrf
@@ -27,11 +25,7 @@
 	            	<button class="btn ulama-primary-btn btn-block">
 		            	Create Channel
 		            </button>
-		            <div class="form-group m-b-20">
-                                                <label>Description</label>
-                                                <div class="summernote">
-                                                </div>
-                                            </div>
+	
 	            </form>
             </div>
             <div class="modal-footer">

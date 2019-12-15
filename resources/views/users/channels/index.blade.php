@@ -56,7 +56,7 @@
 						</div>
                         <div class="text-right">
                             <p class="text-muted m-t-5 text-uppercase font-600 font-secondary">Total Books</p>
-                            <h2 class="m-b-10"><span data-plugin="counterup">{{count($userChannel->documents)}}</span></h2>
+                            <h2 class="m-b-10"><span data-plugin="counterup">{{count($userChannel->books)}}</span></h2>
                         </div>
                         <div class="text-right">
 	                        <button class="btn ulama-success-btn" data-toggle="modal" data-target="#{{$userChannel->id}}_channel_book">

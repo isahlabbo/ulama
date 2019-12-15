@@ -4,9 +4,9 @@ namespace App\Http\Controllers\User\Channels;
 
 use App\Channel;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\UserBaseController;
 
-class ChannelController extends Controller
+class ChannelController extends UserBaseController
 {
     public function newChannel(Request $request)
     {

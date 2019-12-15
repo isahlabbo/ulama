@@ -8,8 +8,9 @@
                     <div class="col-md-10 col-md-offset-1">
                         <div class="p-20">
                             <div class="">
-                                <form method="post" action="{{route('user.channel.resource.audio.register')}}">
+                                <form method="post" action="{{route('user.channel.resource.audio.register')}}" enctype="multipart/form-data">
                                     @csrf
+                                    <input type="hidden" name="channel" value="{{$userChannel->id}}">
                                     <div class="form-group m-b-20">
                                         <label for="exampleInputEmail1">Audio Title</label>
                                         <input type="text" name="title" class="form-control" placeholder="Enter title">
@@ -21,7 +22,7 @@
                                     </div>
                                     <div class="form-group m-b-20">
                                         <label>File Uploads</label>
-                                        <input type="file" name="files[]" id="filer_input1"
+                                        <input type="file" name="audio" id="filer_input1"
                                                        multiple="multiple">
                                     </div>
                                     

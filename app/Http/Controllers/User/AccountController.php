@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\User;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\UserBaseController;
 
-class AccountController extends Controller
+class AccountController extends UserBaseController
 {
     public function upgradeIndex()
     {
@@ -15,7 +15,7 @@ class AccountController extends Controller
     public function upgradeRegister(Request $request)
     {
     	$profile = $this->createProfile($request->all());
-    	$profile->addMedia($request->image);
+    	$profile->addMedia($request->image)->toMediaCollection('image');
         user()->userRoles()->firstOrCreate(['role_id'=>2]);
         session()->flash('message','Account upgraded successfully');
         return redirect()->route('home',[user()->name()]);

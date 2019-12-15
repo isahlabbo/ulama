@@ -1,5 +1,5 @@
 <?php
-
+use App\UserChannel;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,8 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('welcome',['userChannels'=>UserChannel::all()]);
+})->middleware('guest');
 
 Auth::routes();
 

@@ -2,17 +2,19 @@
 
 namespace App\Http\Controllers\User\Channels\Resources;
 
-use App\Channel;
-use App\Http\Controllers\Controller;
+use App\UserChannel;
 use Illuminate\Http\Request;
+use App\Http\Controllers\UserBaseController;
 
-class AudioController extends Controller
+
+class AudioController extends UserBaseController
 {
     public function register(Request $request)
     {
-    	$channel = Channel::find($request->channel);
-    	$audio = $channel->audios()->firstOrCreate(['title'=>$request->title,'description'=>$request->description]);
-    	$audio->addMedia('audios');
+
+    	$userChannel = UserChannel::find($request->channel);
+    	$audio = $userChannel->audios()->firstOrCreate(['title'=>$request->title,'description'=>$request->description]);
+    	$audio->addMedia($request->audio)->toMediaCollection('audios');
     	session()->flash('message','Channel video added successfully');
     	return back();
     }

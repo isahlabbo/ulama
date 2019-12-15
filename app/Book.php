@@ -39,4 +39,5 @@ class Book extends BaseModel implements HasMedia
             ->height(232)
             ->sharpen(10);
     }
+
 }

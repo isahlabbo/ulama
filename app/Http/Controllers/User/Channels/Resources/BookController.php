@@ -3,16 +3,18 @@
 namespace App\Http\Controllers\User\Channels\Resources;
 
 use App\UserChannel;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\UserBaseController;
 
-class BookController extends Controller
+
+class BookController extends UserBaseController
 {
     public function register(Request $request)
     {
+
     	$userChannel = UserChannel::find($request->channel);
     	$book = $userChannel->books()->firstOrCreate(['title'=>$request->title,'description'=>$request->description]);
-    	$book->addMedia('books');
+    	$book->addMedia($request->book)->toMediaCollection('books');
 
     	session()->flash('message','Channel video added successfully');
     	return back();
