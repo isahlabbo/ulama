@@ -8,6 +8,16 @@ class UserChannel extends BaseModel
     {
     	return $this->belongsTo(User::class);
     }
+    
+    public function channel()
+    {
+        return $this->belongsTo(Channel::class);
+    }
+
+    public function plan()
+    {
+        return $this->belongsTo(Plan::class);
+    }
 
     public function videos()
     {

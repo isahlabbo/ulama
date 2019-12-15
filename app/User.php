@@ -97,6 +97,12 @@ class User extends Authenticatable
     {
         return Lga::all();
     }
+
+    public function plans()
+    {
+        return Plan::all();
+    }
+
     public function name()
     {
         return strtolower($this->first_name.'-'.$this->last_name);

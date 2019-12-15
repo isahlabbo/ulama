@@ -78,6 +78,8 @@
                         <li><a href="javascript:void(0)"><i class="ti-user m-r-5"></i> Profile</a></li>
                         @if(!user()->preacher())
                         <li><a href="#" data-toggle="modal" data-target="#upgrade"><i class="ti-settings m-r-5"></i> Upgrade To Preacher</a></li>
+                        @elseif(!user()->admin())
+                        <li><a href="#" data-toggle="modal" data-target="#channel"><i class="ti-settings m-r-5"></i> New Channel</a></li>
                         @endif
                         <li><a href="javascript:void(0)"><i class="ti-lock m-r-5"></i> Lock screen</a></li>
                         <li>

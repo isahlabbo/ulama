@@ -44,7 +44,7 @@
                     <label>Profile Picture</label>
                     <input type="file" name="image" class="form-control"><br>
 
-	            	<button class="btn ulama-success-btn btn-block">
+	            	<button class="btn ulama-promary-btn btn-block">
 		            	Upgrade Now
 		            </button>
 	            </form>

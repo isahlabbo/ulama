@@ -24,7 +24,7 @@ class Profile extends BaseModel implements HasMedia
 
 	public function registerMediaConversions(Media $media = null)
     {
-        $this->addMediaConversion('thumb')
+        $this->addMediaConversion('thumbnail')
             ->width(368)
             ->height(232)
             ->sharpen(10);

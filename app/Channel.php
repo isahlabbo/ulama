@@ -4,7 +4,7 @@ namespace App;
 
 class Channel extends BaseModel
 {
-    public function userChannels($value='')
+    public function userChannels()
     {
     	return $this->hasMany(UserChannel::class);
     }

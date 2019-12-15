@@ -13,8 +13,9 @@
 
                         @if(user() && !user()->preacher())
                             @include('users.account.upgrade.create')
+                        @else
+                            @include('users.channels.create')    
                         @endif
-
                         @yield('page-content')
                     </div> 
                 </div> 

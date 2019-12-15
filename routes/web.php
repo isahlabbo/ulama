@@ -22,9 +22,18 @@ Route::prefix('user')
    ->namespace('User')
    ->name('user.')
    ->group(function() {
-   Route::prefix('account')
-   ->name('account.')
-   ->group(function() {
-	Route::post('upgrade/register', 'AccountController@upgradeRegister')->name('upgrade.register');
-	});
-});
+	    //account routes	
+	    Route::prefix('accounts')
+	        ->name('account.')
+	        ->group(function() {
+		    Route::post('upgrade/register', 'AccountController@upgradeRegister')->name('upgrade.register');
+		});
+	    //channels routes
+	    Route::prefix('channels')
+	        ->namespace('Channels')
+	        ->name('channel.')
+	        ->group(function() {
+		    Route::get('/', 'ChannelController@index')->name('index');
+		    Route::post('/register', 'ChannelController@newChannel')->name('register');
+		});
+    });
