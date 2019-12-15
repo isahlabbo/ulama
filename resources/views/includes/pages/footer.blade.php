@@ -24,8 +24,33 @@
 
 <!-- Dashboard init -->
 <script src="{{asset('pages/jquery.dashboard.js')}}"></script>
+<!--Summernote js-->
+<script src="{{asset('plugins/summernote/summernote.min.js')}}"></script>
+<!-- Select 2 -->
+<script src="{{asset('plugins/select2/js/select2.min.js')}}"></script>
+<!-- Jquery filer js -->
+<script src="{{asset('plugins/jquery.filer/js/jquery.filer.min.js')}}"></script>
 
+<!-- page specific js -->
+<script src="{{asset('pages/jquery.blog-add.init.js')}}"></script>
 <!-- App js -->
 <script src="{{asset('js/jquery.core.js')}}"></script>
 <script src="{{asset('js/jquery.app.js')}}"></script>
-    <script src="{{ asset('js/app.js') }}" defer></script>
+<script src="{{ asset('js/app.js') }}" defer></script>
+<script>
+    jQuery(document).ready(function(){
+
+        $('.summernote').summernote({
+            height: 200,                 // set editor height
+            minHeight: null,             // set minimum height of editor
+            maxHeight: null,             // set maximum height of editor
+            focus: false                 // set focus to editable area after initializing summernote
+        });
+        // Select2
+        $(".select2").select2();
+
+        $(".select2-limiting").select2({
+            maximumSelectionLength: 2
+        });
+    });
+</script>

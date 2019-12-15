@@ -23,7 +23,7 @@
                             <h2 class="m-b-10"><span data-plugin="counterup">{{count($userChannel->videos)}}</span></h2>
                         </div>
                         <div class="text-right">
-	                        <button class="btn ulama-success-btn">
+	                        <button class="btn ulama-success-btn"  data-toggle="modal" data-target="#{{$userChannel->id}}_channel_video">
 	                        	<i class="fa fa-upload"></i>
 	                        </button>
                         </div>
@@ -40,7 +40,7 @@
                             <h2 class="m-b-10"><span data-plugin="counterup">{{count($userChannel->audios)}}</span></h2>
                         </div>
                         <div class="text-right">
-	                        <button class="btn ulama-success-btn">
+	                        <button class="btn ulama-success-btn"  data-toggle="modal" data-target="#{{$userChannel->id}}_channel_audio">
 	                        	<i class="fa fa-upload"></i>
 	                        </button>
                         </div>
@@ -50,19 +50,20 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="card-box widget-box-three">
                         <div class="bg-icon pull-left">
-							<i class="ti-comment-alt"></i>
+							<i class="fa fa-book"></i>
 						</div>
                         <div class="text-right">
                             <p class="text-muted m-t-5 text-uppercase font-600 font-secondary">Total Books</p>
                             <h2 class="m-b-10"><span data-plugin="counterup">{{count($userChannel->documents)}}</span></h2>
                         </div>
                         <div class="text-right">
-	                        <button class="btn ulama-success-btn">
+	                        <button class="btn ulama-success-btn" data-toggle="modal" data-target="#{{$userChannel->id}}_channel_book">
 	                        	<i class="fa fa-upload"></i>
 	                        </button>
                         </div>
                     </div>
                 </div>
+                @include('users.channels.resources.upload')
             </div>
 	    </div>
 	</div>
