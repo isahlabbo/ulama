@@ -1,6 +1,6 @@
 
 <li>
-    <a href="#"><span><i class="fa fa-video"></i> Channels</span></a>
+    <a href="{{route('user.channel.index')}}"><span><i class="fa fa-video"></i> Channels</span></a>
 </li>
 <li>
     <a href="#"><span><i class="fa fa-video"></i> Subscribers</span></a>

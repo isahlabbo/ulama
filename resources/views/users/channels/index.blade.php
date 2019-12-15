@@ -26,6 +26,7 @@
 	                        <button class="btn ulama-success-btn"  data-toggle="modal" data-target="#{{$userChannel->id}}_channel_video">
 	                        	<i class="fa fa-upload"></i>
 	                        </button>
+	                        @include('users.channels.resources.video')
                         </div>
                     </div>
                 </div>
@@ -43,6 +44,7 @@
 	                        <button class="btn ulama-success-btn"  data-toggle="modal" data-target="#{{$userChannel->id}}_channel_audio">
 	                        	<i class="fa fa-upload"></i>
 	                        </button>
+	                        @include('users.channels.resources.audio')
                         </div>
                     </div>
                 </div>
@@ -60,10 +62,10 @@
 	                        <button class="btn ulama-success-btn" data-toggle="modal" data-target="#{{$userChannel->id}}_channel_book">
 	                        	<i class="fa fa-upload"></i>
 	                        </button>
+	                        @include('users.channels.resources.book')
                         </div>
                     </div>
                 </div>
-                @include('users.channels.resources.upload')
             </div>
 	    </div>
 	</div>
