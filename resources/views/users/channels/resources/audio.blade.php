@@ -8,7 +8,8 @@
                     <div class="col-md-10 col-md-offset-1">
                         <div class="p-20">
                             <div class="">
-                                <form>
+                                <form method="post" action="{{route('user.channel.resource.audio.register')}}">
+                                    @csrf
                                     <div class="form-group m-b-20">
                                         <label for="exampleInputEmail1">Audio Title</label>
                                         <input type="text" name="title" class="form-control" placeholder="Enter title">

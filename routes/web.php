@@ -35,5 +35,13 @@ Route::prefix('user')
 	        ->group(function() {
 		    Route::get('/', 'ChannelController@index')->name('index');
 		    Route::post('/register', 'ChannelController@newChannel')->name('register');
+            //channel resource route
+		    Route::prefix('resources')
+		        ->name('resource.')
+		        ->group(function() {
+			    Route::post('/video/register', 'ChannelResourceController@newVideo')->name('video.register');
+			    Route::post('/book/register', 'ChannelResourceController@newBook')->name('book.register');
+			    Route::post('/audio/register', 'ChannelResourceController@newAudio')->name('audio.register');
+			});
 		});
     });
