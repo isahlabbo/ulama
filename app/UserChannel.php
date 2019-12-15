@@ -29,9 +29,9 @@ class UserChannel extends BaseModel
     	return $this->hasMany(Audio::class);
     }
 
-    public function documents()
+    public function books()
     {
-    	return $this->hasMany(Document::class);
+    	return $this->hasMany(Book::class);
     }
 
 

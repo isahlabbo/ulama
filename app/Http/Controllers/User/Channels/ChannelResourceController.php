@@ -9,16 +9,28 @@ class ChannelResourceController extends Controller
 {
     public function newVideo(Request $request)
     {
-    	dd($request->all());
+    	$channel = Channel::find($request->channel);
+    	$channel->ChannelVideos()->firstOrCreate(['title'=>$request->title,'description'=>$request->description]);
+    	$channel->addMedia('videos');
+    	session()->flash('message','Channel video added successfully');
+    	return back();
     }
 
     public function newBook(Request $request)
     {
-    	dd($request->all());
+    	$channel = Channel::find($request->channel);
+    	$channel->ChannelBooks()->firstOrCreate(['title'=>$request->title,'description'=>$request->description]);
+    	$channel->addMedia('videos');
+    	session()->flash('message','Channel video added successfully');
+    	return back();
     }
 
     public function newAudio(Request $request)
     {
-    	dd($request->all());
+    	$channel = Channel::find($request->channel);
+    	$channel->ChannelAudios()->firstOrCreate(['title'=>$request->title,'description'=>$request->description]);
+    	$channel->addMedia('videos');
+    	session()->flash('message','Channel video added successfully');
+    	return back();
     }
 }

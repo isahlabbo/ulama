@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDocumentDownloadsTable extends Migration
+class CreateBookViewsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateDocumentDownloadsTable extends Migration
      */
     public function up()
     {
-        Schema::create('document_downloads', function (Blueprint $table) {
+        Schema::create('book_views', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('user_id')
             ->unsigned()
@@ -23,12 +23,12 @@ class CreateDocumentDownloadsTable extends Migration
             ->on('users')
             ->delete('restrict')
             ->update('cascade');
-            $table->integer('document_id')
+            $table->integer('book_id')
             ->unsigned()
             ->nullable()
             ->foreign()
             ->references('id')
-            ->on('documents')
+            ->on('books')
             ->delete('restrict')
             ->update('cascade');
             $table->timestamps();
@@ -42,6 +42,6 @@ class CreateDocumentDownloadsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('document_downloads');
+        Schema::dropIfExists('book_views');
     }
 }

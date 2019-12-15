@@ -3,15 +3,15 @@
 namespace App;
 
 
-class DocumentDownload extends BaseModel
+class BookDownload extends BaseModel
 {
     public function users()
     {
     	return $this->belongsTo(User::class);
     }
 
-    public function document()
+    public function book()
     {
-    	return $this->belongsTo(Document::class);
+    	return $this->belongsTo(Book::class);
     }
 }

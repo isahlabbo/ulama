@@ -18,16 +18,19 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/{user}', 'HomeController@index')->name('home');
+
 Route::prefix('user')
    ->namespace('User')
    ->name('user.')
    ->group(function() {
+	    
 	    //account routes	
 	    Route::prefix('accounts')
 	        ->name('account.')
 	        ->group(function() {
 		    Route::post('upgrade/register', 'AccountController@upgradeRegister')->name('upgrade.register');
 		});
+	    
 	    //channels routes
 	    Route::prefix('channels')
 	        ->namespace('Channels')
@@ -35,13 +38,33 @@ Route::prefix('user')
 	        ->group(function() {
 		    Route::get('/', 'ChannelController@index')->name('index');
 		    Route::post('/register', 'ChannelController@newChannel')->name('register');
+            
             //channel resource route
 		    Route::prefix('resources')
 		        ->name('resource.')
+		        ->namespace('Resources')
 		        ->group(function() {
-			    Route::post('/video/register', 'ChannelResourceController@newVideo')->name('video.register');
-			    Route::post('/book/register', 'ChannelResourceController@newBook')->name('book.register');
-			    Route::post('/audio/register', 'ChannelResourceController@newAudio')->name('audio.register');
+
+		        // books resouces routes	
+                Route::prefix('books')
+		        ->name('book.')
+		        ->group(function() {
+                    Route::post('/register', 'BookController@register')->name('register');
+		        });
+
+                // videos resouces routes	
+                Route::prefix('videos')
+		        ->name('video.')
+		        ->group(function() {
+                    Route::post('/register', 'VideoController@register')->name('register');
+		        });
+
+		        // audios resouces routes	
+                Route::prefix('audios')
+		        ->name('audio.')
+		        ->group(function() {
+                    Route::post('/register', 'AudioController@register')->name('register');
+		        });
 			});
 		});
     });

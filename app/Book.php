@@ -6,7 +6,7 @@ use Spatie\MediaLibrary\Models\Media;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 
-class Audio extends BaseModel implements HasMedia
+class Book extends BaseModel implements HasMedia
 {
     use HasMediaTrait;
 
@@ -15,20 +15,20 @@ class Audio extends BaseModel implements HasMedia
     	return $this->belongsTo(UserChannel::class);
     }
 
-    public function audioDownloads()
+    public function bookDownloads()
     {
-    	return $this->hasMany(AudioDownload::class);
+    	return $this->hasMany(BookDownload::class);
     }
 
-    public function audioViews()
+    public function bookViews()
     {
-    	return $this->hasMany(AudioView::class);
+    	return $this->hasMany(BookView::class);
     }
 
     public function registerMediaCollections()
     {
         $this
-        ->addMediaCollection('audios')
+        ->addMediaCollection('books')
         ->singleFile(); 
     }
 

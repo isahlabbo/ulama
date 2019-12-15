@@ -8,9 +8,4 @@ class Channel extends BaseModel
     {
     	return $this->hasMany(UserChannel::class);
     }
-
-    public function subscription()
-    {
-    	return $this->belongsTo(Subscription::class);
-    }
 }

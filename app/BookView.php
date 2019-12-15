@@ -2,14 +2,14 @@
 
 namespace App;
 
-class DocumentView extends BaseModel
+class BookView extends BaseModel
 {
     public function user()
     {
     	return $this->belongsTo(User::class);
     }
-    public function document()
+    public function book()
     {
-    	return $this->belongsTo(Document::class);
+    	return $this->belongsTo(Book::class);
     }
 }
