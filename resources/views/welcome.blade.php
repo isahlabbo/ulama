@@ -9,7 +9,7 @@
   <div class="row">
     @foreach(preachers() as $preacher)
       @if($preacher->profile)
-        <a href="">
+        <a href="{{route('user.channels',[$preacher->id])}}">
           <div class="col-md-4">
             <div class="card">
               <div class="card-body">

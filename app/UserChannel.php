@@ -34,5 +34,10 @@ class UserChannel extends BaseModel
     	return $this->hasMany(Book::class);
     }
 
+    public function subscriptions()
+    {
+        return $this->hasMany(Subscription::class);
+    }
+
 
 }

@@ -1,5 +1,6 @@
 <?php
 use App\UserChannel;
+use App\User;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,6 +15,10 @@ use App\UserChannel;
 Route::get('/', function () {
     return view('welcome',['userChannels'=>UserChannel::all()]);
 })->middleware('guest');
+
+Route::get('/user/{userID}/channels', function ($userID) {
+    return view('channels',['user'=>User::find($userID)]);
+})->name('user.channels');
 
 Auth::routes();
 
