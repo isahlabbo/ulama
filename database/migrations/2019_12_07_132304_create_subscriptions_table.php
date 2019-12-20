@@ -31,6 +31,7 @@ class CreateSubscriptionsTable extends Migration
             ->on('user_channels')
             ->delete('restrict')
             ->update('cascade');
+            $table->integer('status')->default(1);
             $table->timestamps();
         });
     }

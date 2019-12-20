@@ -38,6 +38,12 @@ class UserChannel extends BaseModel
     {
         return $this->hasMany(Subscription::class);
     }
-
+    
+    public function hasSubscription()
+    {
+        if(count(user()->subscriptions->where('user_channel_id',$this->id))>0){
+            return true;
+        }
+    }
 
 }

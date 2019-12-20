@@ -29,6 +29,8 @@ Route::prefix('user')
    ->name('user.')
    ->group(function() {
 	    
+		Route::get('/{userID}/channels/view', 'Channels\ChannelController@channels')->name('channels.view');
+
 	    //account routes	
 	    Route::prefix('accounts')
 	        ->name('account.')
@@ -43,6 +45,7 @@ Route::prefix('user')
 	        ->group(function() {
 		    Route::get('/', 'ChannelController@index')->name('index');
 		    Route::post('/register', 'ChannelController@newChannel')->name('register');
+		    Route::get('{channelID}/subscribe', 'ChannelController@subscribe')->name('subscribe');
             
             //channel resource route
 		    Route::prefix('resources')

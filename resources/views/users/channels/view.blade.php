@@ -1,5 +1,5 @@
 
-@extends('layouts.welcome')
+@extends('layouts.app')
 
 @section('title')
     ulama welcome page title
@@ -9,7 +9,6 @@
 <br>
   <div class="row">
     @foreach($user->userChannels as $userChannel)
-        
           <div class="col-md-4">
             <div class="card">
               <div class="card-body">
@@ -20,7 +19,13 @@
               <a href=""><p class="h5">{{count($userChannel->videos)}} Video Preaches</p></a>
               <a href=""><p class="h5">{{count($userChannel->audios)}} Audio Recorded Preaches</p></a>
               <a href=""><p class="h5">{{count($userChannel->books)}} Books Uploaded</p></a>
-              <p class="h5"><a href="{{route('user.channel.subscribe',[$userChannel->id])}}"><button class="btn  btn-block ulama-success-btn">Subscribe</button></a></p>
+              <p class="h5"><a href="{{route('user.channel.subscribe',[$userChannel->id])}}"><button class="btn  btn-block ulama-success-btn">
+              	@if(user()->hasSubscription($userChannel))
+                    UnSubscribe
+              	@else
+                    Subscribe
+              	@endif
+              </button></a></p>
             </div>
           </div>
         </a> 

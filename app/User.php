@@ -83,6 +83,42 @@ class User extends Authenticatable
         return $this->hasMany(DocumentView::class);
     }
 
+    public function subscriptions()
+    {
+        return $this->hasMany(Subscription::class);
+    }
+
+    public function hasSubscription(UserChannel $userChannel)
+    {
+        if(count($this->subscriptions->where('user_channel_id',$userChannel->id)->where('status',1))>0){
+            return true;
+        }
+    }
+
+    public function subscribe(UserChannel $userChannel)
+    {
+        $subscription = null;
+        foreach ($this->subscriptions->where('user_channel_id',$userChannel->id) as $currentSubscription) {
+            $subscription = $currentSubscription;
+        }
+        if($subscription){
+            $subscription->update(['status'=>1]);
+        }else{
+            $this->subscriptions()->create(['user_channel_id',$userChannel->id]);
+        }
+    }
+
+    public function FunctionName($value='')
+    {
+        $subscription = null;
+        foreach ($this->subscriptions->where('user_channel_id',$userChannel->id) as $currentSubscription) {
+            $subscription = $currentSubscription;
+        }
+        if($subscription){
+            $subscription->update(['status'=>1]);
+        }
+    }
+
     public function genders()
     {
         return Gender::all();
