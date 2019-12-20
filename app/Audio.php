@@ -35,8 +35,8 @@ class Audio extends BaseModel implements HasMedia
     public function registerMediaConversions(Media $media = null)
     {
         $this->addMediaConversion('thumbnail')
-            ->width(368)
-            ->height(232)
+            ->width(150)
+            ->height(250)
             ->sharpen(10);
     }
 }

@@ -20,13 +20,13 @@
 						</div>
                         <div class="text-right">
                             <p class="text-muted m-t-5 text-uppercase font-600 font-secondary">Total Videos</p>
-                            <h2 class="m-b-10"><span data-plugin="counterup">{{count($userChannel->videos)}}</span></h2>
+                            <h2 class="m-b-10"><a href="{{route('user.channel.resources.videos',[$userChannel->id])}}"><span data-plugin="counterup">{{count($userChannel->videos)}}</span></a></h2>
                         </div>
                         <div class="text-right">
 	                        <button class="btn ulama-success-btn"  data-toggle="modal" data-target="#{{$userChannel->id}}_channel_video">
 	                        	<i class="fa fa-upload"></i>
 	                        </button>
-	                        @include('users.channels.resources.video')
+	                        @include('users.channels.resources.author.video.create')
                         </div>
                     </div>
                 </div>
@@ -38,13 +38,13 @@
 						</div>
                         <div class="text-right">
                             <p class="text-muted m-t-5 text-uppercase font-600 font-secondary">Total Audios</p>
-                            <h2 class="m-b-10"><span data-plugin="counterup">{{count($userChannel->audios)}}</span></h2>
+                            <h2 class="m-b-10"><a href="{{route('user.channel.resources.audios',[$userChannel->id])}}"><span data-plugin="counterup">{{count($userChannel->audios)}}</span></a></h2>
                         </div>
                         <div class="text-right">
 	                        <button class="btn ulama-success-btn"  data-toggle="modal" data-target="#{{$userChannel->id}}_channel_audio">
 	                        	<i class="fa fa-upload"></i>
 	                        </button>
-	                        @include('users.channels.resources.audio')
+	                        @include('users.channels.resources.author.audio.create')
                         </div>
                     </div>
                 </div>
@@ -56,13 +56,13 @@
 						</div>
                         <div class="text-right">
                             <p class="text-muted m-t-5 text-uppercase font-600 font-secondary">Total Books</p>
-                            <h2 class="m-b-10"><span data-plugin="counterup">{{count($userChannel->books)}}</span></h2>
+                            <h2 class="m-b-10"><a href="{{route('user.channel.resources.books',[$userChannel->id])}}"><span data-plugin="counterup">{{count($userChannel->books)}}</span></a></h2>
                         </div>
                         <div class="text-right">
 	                        <button class="btn ulama-success-btn" data-toggle="modal" data-target="#{{$userChannel->id}}_channel_book">
 	                        	<i class="fa fa-upload"></i>
 	                        </button>
-	                        @include('users.channels.resources.book')
+	                        @include('users.channels.resources.author.book.create')
                         </div>
                     </div>
                 </div>

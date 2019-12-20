@@ -17,12 +17,11 @@
                                     </div>
                                     <div class="form-group m-b-20">
                                         <label>Description</label>
-                                        <div class="summernote">
-                                        </div>
+                                        <textarea class="form-control" name="description" rows="5" cols="120"></textarea>
                                     </div>
                                     <div class="form-group m-b-20">
                                         <label>File Uploads</label>
-                                        <input type="file" name="book" id="filer_input1"
+                                        <input type="file" name="book" class="form-control" 
                                                        multiple="multiple">
                                     </div>
                                     

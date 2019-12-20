@@ -17,15 +17,15 @@
     <!--Morris Chart CSS -->
     <link rel="stylesheet" href="{{('plugins/morris/morris.css')}}">
 
-    <link href="{{asset('plugins/jquery.filer/css/jquery.filer.css')}}" rel="stylesheet" />
-    <link href="{{asset('plugins/jquery.filer/css/themes/jquery.filer-dragdropbox-theme.css')}}" rel="stylesheet" />
+   <!--  <link href="{{asset('plugins/jquery.filer/css/jquery.filer.css')}}" rel="stylesheet" />
+    <link href="{{asset('plugins/jquery.filer/css/themes/jquery.filer-dragdropbox-theme.css')}}" rel="stylesheet" /> -->
     <!-- App css -->
 
     <!-- Summernote css -->
-    <link href="{{asset('plugins/summernote/summernote.css')}}" rel="stylesheet" />
+    <!-- <link href="{{asset('plugins/summernote/summernote.css')}}" rel="stylesheet" />
 
-    <!-- Select2 -->
-    <link href="{{asset('plugins/select2/css/select2.min.css"')}} rel="stylesheet" type="text/css" />
+    
+    <link href="{{asset('plugins/select2/css/select2.min.css"')}} rel="stylesheet" type="text/css" /> -->
 
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('css/core.css')}}" rel="stylesheet" type="text/css" />
@@ -37,5 +37,5 @@
     <link href="{{asset('css/responsive.css')}}" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="{{asset('plugins/switchery/switchery.min.css')}}">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <script src="{{asset('js/modernizr.min.js')}}"></script>
+    <!-- <script src="{{asset('js/modernizr.min.js')}}"></script> -->
 </head>

@@ -67,4 +67,12 @@ Route::prefix('user')
 		        });
 			});
 		});
+        Route::prefix('channels/{channelID}/')
+	        ->namespace('Channels\Resources')
+	        ->name('channel.resources.')
+	        ->group(function() {
+            Route::get('videos','VideoController@index')->name('videos');
+            Route::get('books','BookController@index')->name('books');
+            Route::get('audios','AudioController@index')->name('audios');
+	    });
     });

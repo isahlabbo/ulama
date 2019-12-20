@@ -19,4 +19,9 @@ class BookController extends UserBaseController
     	session()->flash('message','Channel video added successfully');
     	return back();
     }
+
+    public function index($channelID)
+    {
+    	return view('users.channels.resources.author.book.index',['userChannel'=>UserChannel::find($channelID)]);
+    }
 }

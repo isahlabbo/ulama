@@ -12,7 +12,7 @@
 <script src="{{asset('js/waves.js')}}"></script>
 <script src="{{asset('js/jquery.slimscroll.js')}}"></script>
 <script src="{{asset('js/jquery.scrollTo.min.js')}}"></script>
-<script src="../plugins/switchery/switchery.min.js"></script>
+<script src="{{asset('plugins/switchery/switchery.min.js')}}"></script>
 
 <!-- Counter js  -->
 <!-- <script src="../plugins/waypoints/jquery.waypoints.min.js"></script>

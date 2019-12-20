@@ -15,14 +15,15 @@
                                         <label for="exampleInputEmail1">Video Title</label>
                                         <input type="text" name="title" class="form-control" placeholder="Enter title">
                                     </div>
+                                    
                                     <div class="form-group m-b-20">
                                         <label>Description</label>
-                                        <div class="summernote">
-                                        </div>
+                                        <textarea class="form-control" name="description" rows="5" cols="120"></textarea>
                                     </div>
+
                                     <div class="form-group m-b-20">
                                         <label>File Uploads</label>
-                                        <input type="file" name="video" id="filer_input1"
+                                        <input type="file" name="video" id="fdiler_input1"
                                                        multiple="multiple">
                                     </div>
                                     
