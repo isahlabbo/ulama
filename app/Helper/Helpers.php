@@ -1,4 +1,5 @@
 <?php
+use App\UserChannel;
 
 if (!function_exists('storage_url')) {
     function storage_url($url)
@@ -15,5 +16,12 @@ if (!function_exists('user')) {
         	$user = auth()->user();
         }
         return $user;
+    }
+}
+
+if (!function_exists('userChannels')) {
+    function userChannels()
+    {
+        return UserChannel::all();
     }
 }

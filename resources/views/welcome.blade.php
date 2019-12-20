@@ -6,7 +6,7 @@
 
 @section('page-content')
 <br>
-  @foreach($userChannels as $userChannel)
+  @foreach(userChannels() as $userChannel)
     <div class="row">
     <p class="ulama-primary-btn btn-block">List of videos preaches</p>
     @foreach($userChannel->videos as $video)

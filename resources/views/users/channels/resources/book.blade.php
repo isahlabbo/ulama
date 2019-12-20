@@ -1,5 +1,5 @@
 <!-- modal -->
-<div class="modal fade" id="{{$userChannel->id}}_channel_video" role="dialog">
+<div class="modal fade" id="{{$userChannel->id}}_channel_book" role="dialog">
     <div class="modal-dialog">
       <!-- Modal content-->
         <div class="modal-content">
@@ -8,22 +8,20 @@
                     <div class="col-md-10 col-md-offset-1">
                         <div class="p-20">
                             <div class="">
-                                <form  method="post" action="{{route('user.channel.resource.video.register')}}" enctype="multipart/form-data">
+                                <form  method="post" action="{{route('user.channel.resource.book.register')}}" enctype="multipart/form-data">
                                     @csrf
                                     <input type="hidden" name="channel" value="{{$userChannel->id}}">
                                     <div class="form-group m-b-20">
-                                        <label for="exampleInputEmail1">Video Title</label>
+                                        <label for="exampleInputEmail1">Book Title</label>
                                         <input type="text" name="title" class="form-control" placeholder="Enter title">
                                     </div>
-                                    
                                     <div class="form-group m-b-20">
                                         <label>Description</label>
                                         <textarea class="form-control" name="description" rows="5" cols="120"></textarea>
                                     </div>
-
                                     <div class="form-group m-b-20">
                                         <label>File Uploads</label>
-                                        <input type="file" name="video" class="form-control" 
+                                        <input type="file" name="book" class="form-control" 
                                                        multiple="multiple">
                                     </div>
                                     

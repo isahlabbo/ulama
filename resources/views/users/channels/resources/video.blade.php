@@ -23,7 +23,7 @@
 
                                     <div class="form-group m-b-20">
                                         <label>File Uploads</label>
-                                        <input type="file" name="video" class="form-control" 
+                                        <input type="file" name="video" id="fdiler_input1"
                                                        multiple="multiple">
                                     </div>
                                     

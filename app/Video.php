@@ -32,11 +32,4 @@ class Video extends BaseModel implements HasMedia
         ->singleFile(); 
     }
 
-    public function registerMediaConversions(Media $media = null)
-    {
-        $this->addMediaConversion('thumbnail')
-            ->width(368)
-            ->height(232)
-            ->sharpen(10);
-    }
 }
