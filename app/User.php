@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'first_name','last_name', 'email', 'password',
+        'first_name','last_name', 'email', 'password','phone'
     ];
 
     /**
@@ -106,5 +106,5 @@ class User extends Authenticatable
     public function name()
     {
         return strtolower($this->first_name.'-'.$this->last_name);
-    }
+    } 
 }

@@ -1,5 +1,7 @@
 <?php
+
 use App\UserChannel;
+use App\User;
 
 if (!function_exists('storage_url')) {
     function storage_url($url)
@@ -23,5 +25,18 @@ if (!function_exists('userChannels')) {
     function userChannels()
     {
         return UserChannel::all();
+    }
+}
+
+if (!function_exists('preachers')) {
+    function preachers()
+    {
+        $preachers = [];
+        foreach (User::all() as $user) {
+            if($user->preacher()){
+                $preachers[] = $user;
+            }
+        }
+        return $preachers;
     }
 }

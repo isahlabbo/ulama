@@ -6,62 +6,23 @@
 
 @section('page-content')
 <br>
-  @foreach(userChannels() as $userChannel)
-    <div class="row">
-    <p class="ulama-primary-btn btn-block">List of videos preaches</p>
-    @foreach($userChannel->videos as $video)
-      @if($loop->index <=1)
-        <div class="col-lg-4 col-md-6">
-          <div class="card-box widget-box-three">
-             @foreach($video->getMedia('videos') as $videoMedia)
-              <video width="300" height="220">
-                <source src="{{$videoMedia->getFullUrl()}}" type=video/ogg>
-                <source src="{{$videoMedia->getFullUrl()}}" type=video/mp4>
-              </video>
-              @endforeach
+  <div class="row">
+    @foreach(preachers() as $preacher)
+      @if($preacher->profile)
+        <a href="">
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body">
+                <img src="{{$preacher->profile->getMedia('image')[0]->getUrl('thumbnail')}}" width="350" height="200">
+              </div>
+              <p class="h5">{{$preacher->first_name}} {{$preacher->last_name}}</p>
+              <p class="h5">{{count($preacher->userChannels)}} Channels</p>
+              <p class="h5">{{$preacher->profile->state->name}} State</p>
+              <p class="h5">{{$preacher->profile->lga->name}} Local Government</p>
+            </div>
           </div>
-        </div>
+        </a>
       @endif
     @endforeach
-    </div>
-    <div class="row">
-    <p class="ulama-primary-btn btn-block">List of audio recorded preaches</p>  
-    @foreach($userChannel->audios as $audio)
-      @if($loop->index <=1)
-        <div class="col-lg-4 col-md-6">
-          <div class="card-box widget-box-three">
-            @foreach($audio->getMedia('audios') as $audioMedia)
-            <audio controls>
-              <source src="{{$audioMedia->getUrl('thumbnail')}}" type="audio/ogg">
-              <source src="{{$audioMedia->getFullUrl()}}" type="audio/mpeg">
-            </audio>
-            @endforeach
-          </div>
-        </div>
-      @endif
-    @endforeach
-    </div>
-    <div class="row">
-    <p class="ulama-primary-btn btn-block">List of books publishes</p>  
-    @foreach($userChannel->books as $book)
-      @if($loop->index <=1)
-        <div class="col-lg-3 col-md-6">
-          <div class="card-box widget-box-three">
-            @foreach($book->getMedia('books') as $bookMedia)
-            <a href="{{$bookMedia->getFullUrl()}}">
-                <img src="{{$bookMedia->getUrl('thumbnail')}}" class="img img-thumbnail">
-            </a>
-            @endforeach
-
-            <p>{{$book->title}}</p>
-            <p>{{$book->userChannel->channel->title}}</p>
-            <p><span>2 Views</span>  <span>3 Downloads</span></p>
-
-          </div>
-        </div>
-      @endif
-    @endforeach
-    </div>
-  @endforeach
-
+  </div>
 @endsection

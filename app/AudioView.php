@@ -2,7 +2,6 @@
 
 namespace App;
 
-
 class AudioView extends BaseModel
 {
     public function user()

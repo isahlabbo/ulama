@@ -15,6 +15,21 @@ class Profile extends BaseModel implements HasMedia
     	return $this->belongsTo(User::class);
     }
 
+    public function lga()
+    {
+        return $this->belongsTo(Lga::class);
+    }
+
+    public function gender()
+    {
+        return $this->belongsTo(Gender::class);
+    }
+
+    public function state()
+    {
+        return $this->belongsTo(State::class);
+    }
+
     public function registerMediaCollections()
 	{
 	    $this

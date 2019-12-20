@@ -18,7 +18,8 @@ class UsersTableSeeder extends Seeder
         		'first_name'=> 'isah',
         		'last_name'=> 'labbo',
         		'email'=> 'isahlabbo'.$i.'@ulama.com',
-        		'password'=> Hash::make('123456')
+        		'password'=> Hash::make('123456'),
+                'phone'=> '0'.rand(7,9).rand(0,1).rand(00000000,99999999)
             ];
             $currentUser = User::create($user);
             $currentUser->userRoles()->firstOrCreate(['role_id'=>$i]);
